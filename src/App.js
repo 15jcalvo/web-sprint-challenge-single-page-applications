@@ -1,13 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-
-function Home(props) {
-  return <h1>Home</h1>
-}
-
-function Pizza(props) {
-  return <h1>Order Form</h1>
-}
+import PizzaOrder from './PizzaOrder';
+import Home from './Home';
 
 const App = () => {
   return (
@@ -25,7 +19,7 @@ const App = () => {
             <Home />
           </Route>
           <Route path='/pizza'>
-            <Pizza />
+            <PizzaOrder />
           </Route>
         </Switch>
       </BrowserRouter>
