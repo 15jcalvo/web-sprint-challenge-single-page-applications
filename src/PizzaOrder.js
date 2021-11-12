@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function PizzaOrder(props){
     const {
@@ -9,9 +9,8 @@ export default function PizzaOrder(props){
     } = props
 
     const onChange = evt => {
-        const { name, value, checked, type } = evt.target
-        const realValue = type === 'checkbox' ? checked : value;
-        change(name, realValue)
+        const { name, value} = evt.target;
+        change(name, value)
       }
     
     const onSubmit = evt => {
