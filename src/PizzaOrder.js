@@ -3,7 +3,8 @@ import React from 'react';
 export default function PizzaOrder(props){
     const {
         values,
-        change
+        change,
+        submit
     } = props
 
     const onChange = evt => {
@@ -11,11 +12,16 @@ export default function PizzaOrder(props){
         const realValue = type === 'checkbox' ? checked : value;
         change(name, realValue)
       }
+    
+    const onSubmit = evt => {
+        evt.preventDefault()
+        submit()
+      }
 
     return(
         <div>
         <h1>Order Form</h1>
-        <form id='pizza-form'>
+        <form id='pizza-form' onSubmit={onSubmit}>
             <div>
                 <label>Name</label>
             </div>
