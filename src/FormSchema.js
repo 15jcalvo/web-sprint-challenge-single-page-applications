@@ -16,6 +16,7 @@ const formSchema= yup.object().shape({
     .string(),
     pineapple: yup
     .string(),
+    size: yup.string(),
 })
 
 export default formSchema;
