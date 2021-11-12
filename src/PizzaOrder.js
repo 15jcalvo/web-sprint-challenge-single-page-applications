@@ -3,6 +3,7 @@ import React from 'react';
 export default function PizzaOrder(props){
     const {
         values,
+        errors,
         change,
         submit
     } = props
@@ -106,6 +107,7 @@ export default function PizzaOrder(props){
                 />
             </div>
             <button id='order-button'>Submit</button>
+            <div><h3>{errors.name}</h3></div>
         </form>
         </div>
     )
