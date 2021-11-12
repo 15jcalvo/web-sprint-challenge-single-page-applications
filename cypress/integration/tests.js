@@ -15,6 +15,7 @@ describe('Pizza order form', () => {
     const mushroomInput = () => cy.get('input[name=mushroom]');
     const sausageInput = () => cy.get('input[name=sausage]');
     const pineappleInput = () => cy.get('input[name=pineapple]');
+    const submitButton = () => cy.get('button[id="order-button"');
 
     it('Name input test', () => {
         nameInput().type('name input test');
@@ -24,10 +25,13 @@ describe('Pizza order form', () => {
         specialInput().type('special instructions input test');
         specialInput().should('be.value', 'special instructions input test')
     })
-    it('checkboxes test', () => {
+    it('Topping click tests', () => {
         pepperoniInput().click();
         mushroomInput().click();
         sausageInput().click();
         pineappleInput().click();
+    })
+    it('Submit button test', () => {
+        submitButton().click();
     })
 })
