@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import PizzaOrder from './PizzaOrder';
 import Home from './Home';
+import axios from 'axios';
 
 const initialFormValues= {
   name: '',
@@ -16,6 +17,19 @@ const initialFormValues= {
 const App = () => {
   
   const[formValues, setFormValues] = useState(initialFormValues);
+
+  const postNewOrder = newOrder => {
+    axios.post('https://reqres.in/api/orders', newOrder)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.error(err);
+      })
+      .finally(() => {
+        setFormValues(initialFormValues);
+      })
+  }
   
   const inputChange= (name, value) => {
     setFormValues({
@@ -35,6 +49,7 @@ const App = () => {
       special: formValues.special
     }
     console.log(newOrder);
+    postNewOrder(newOrder);
     setFormValues(initialFormValues);
   }
 
