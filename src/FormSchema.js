@@ -7,7 +7,15 @@ const formSchema= yup.object().shape({
     .min(2, 'name must be at least 2 characters'),
     special: yup
     .string()
-    .trim()
+    .trim(),
+    pepperoni: yup
+    .string(),
+    mushroom: yup
+    .string(),
+    sausage: yup
+    .string(),
+    pineapple: yup
+    .string(),
 })
 
 export default formSchema;
