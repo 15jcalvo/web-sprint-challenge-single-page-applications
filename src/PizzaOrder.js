@@ -62,7 +62,7 @@ export default function PizzaOrder(props){
                 <label>Bell pepper</label>
                 <input
                 type='radio'
-                name='bell-pepper'
+                name='bellpepper'
                 value=''
                 />
             </div>
