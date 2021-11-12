@@ -17,7 +17,13 @@ const initialFormValues= {
 }
 
 const initialFormErrors = {
-  name: ''
+  name: '',
+  size: '',
+  pepperoni: '',
+  mushroom: '',
+  sausage: '',
+  pineapple: '',
+  special: ''
 }
 
 const App = () => {

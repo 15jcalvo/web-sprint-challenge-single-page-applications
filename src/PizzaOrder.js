@@ -57,7 +57,7 @@ export default function PizzaOrder(props){
             <div>
                 <label>Pepperoni</label>
                 <input
-                type='radio'
+                type='checkbox'
                 name='pepperoni'
                 value='pepperoni'
                 onChange={onChange}
@@ -67,7 +67,7 @@ export default function PizzaOrder(props){
             <div>
                 <label>Mushroom</label>
                 <input
-                type='radio'
+                type='checkbox'
                 name='mushroom'
                 value='mushroom'
                 onChange={onChange}
@@ -77,7 +77,7 @@ export default function PizzaOrder(props){
             <div>
                 <label>Sausage</label>
                 <input
-                type='radio'
+                type='checkbox'
                 name='sausage'
                 value='sausage'
                 onChange={onChange}
@@ -87,7 +87,7 @@ export default function PizzaOrder(props){
             <div>
                 <label>Pineapple</label>
                 <input
-                type='radio'
+                type='checkbox'
                 name='pineapple'
                 value='pineapple'
                 onChange={onChange}
