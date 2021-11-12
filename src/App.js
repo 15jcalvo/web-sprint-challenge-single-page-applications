@@ -6,15 +6,21 @@ import Home from './Home';
 const initialFormValues= {
   name: '',
   size: '',
-  pepperoni: 0,
-  mushroom: 0,
-  sausage: 0,
-  bellpepper: 0,
+  pepperoni: '',
+  mushroom: '',
+  sausage: '',
+  pineapple: '',
   special: ''
 }
 
 const App = () => {
   const[formValues, setFormValues] = useState(initialFormValues);
+  const inputChange= (name, value) => {
+    setFormValues({
+      ...formValues,
+      [name]: value
+    })
+  }
   return (
     <>
       <h1>Lambda Eats</h1>
@@ -30,7 +36,7 @@ const App = () => {
             <Home />
           </Route>
           <Route path='/pizza'>
-            <PizzaOrder />
+            <PizzaOrder values={formValues} change={inputChange}/>
           </Route>
         </Switch>
       </BrowserRouter>

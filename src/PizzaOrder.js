@@ -1,6 +1,17 @@
 import React from 'react';
 
 export default function PizzaOrder(props){
+    const {
+        values,
+        change
+    } = props
+
+    const onChange = evt => {
+        const { name, value, checked, type } = evt.target
+        const realValue = type === 'checkbox' ? checked : value;
+        change(name, realValue)
+      }
+
     return(
         <div>
         <h1>Order Form</h1>
@@ -13,7 +24,8 @@ export default function PizzaOrder(props){
                     type='text'
                     id='name-input'
                     name='name'
-                    value=''
+                    value={values.name}
+                    onChange={onChange}
                 />
             </div>
             <div>
@@ -21,9 +33,10 @@ export default function PizzaOrder(props){
             </div>
             <div>
                 <select
-                    value=''
                     id='size-dropdown'
                     name='size'
+                    value={values.size}
+                    onChange={onChange}
                 >
                     <option value=''>--Select Size--</option>
                     <option value='small'>Small</option>
@@ -39,7 +52,9 @@ export default function PizzaOrder(props){
                 <input
                 type='radio'
                 name='pepperoni'
-                value=''
+                value='pepperoni'
+                onChange={onChange}
+                checked={values.pepperoni === 'pepperoni'}
                 />
             </div>
             <div>
@@ -47,23 +62,29 @@ export default function PizzaOrder(props){
                 <input
                 type='radio'
                 name='mushroom'
-                value=''
+                value='mushroom'
+                onChange={onChange}
+                checked={values.mushroom === 'mushroom'}
                 />
             </div>
             <div>
                 <label>Sausage</label>
                 <input
                 type='radio'
-                name='Sausage'
-                value=''
+                name='sausage'
+                value='sausage'
+                onChange={onChange}
+                checked={values.sausage === 'sausage'}
                 />
             </div>
             <div>
-                <label>Bell pepper</label>
+                <label>Pineapple</label>
                 <input
                 type='radio'
-                name='bellpepper'
-                value=''
+                name='pineapple'
+                value='pineapple'
+                onChange={onChange}
+                checked={values.pineapple === 'pineapple'}
                 />
             </div>
             <div>
@@ -74,7 +95,8 @@ export default function PizzaOrder(props){
                     type='text'
                     id='special-text'
                     name='special'
-                    value=''
+                    value={values.special}
+                    onChange={onChange}
                 />
             </div>
             <button id='order-button'>Submit</button>
